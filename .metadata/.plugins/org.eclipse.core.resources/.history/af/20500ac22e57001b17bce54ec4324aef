@@ -1,0 +1,116 @@
+package newPackage;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class TestClass {
+
+	public WebDriver driver;
+
+	@BeforeMethod
+	public void setup() {
+
+		driver = new ChromeDriver();
+
+	}
+	
+	@Test
+	public void loadWeb() throws InterruptedException {
+		
+/*		driver.get("http://blazedemo.com/");
+		Thread.sleep(3000);
+		
+		WebElement drpSource = driver.findElement(By.xpath("//*[@name='fromPort']"));
+		Select Source = new Select(drpSource);
+		Source.selectByVisibleText("San Diego");
+		
+		Thread.sleep(1000);
+		
+		WebElement drpDestination = driver.findElement(By.xpath("//*[@name='toPort']"));
+		Select Destination = new Select(drpDestination);
+		Destination.selectByVisibleText("Dublin");
+		
+		Thread.sleep(1000);
+		
+		WebElement findFlight = driver.findElement(By.xpath("//*[@value='Find Flights']"));
+		findFlight.click();
+		Thread.sleep(1000);
+		
+		//Find cheapest price & row number
+		
+		List<WebElement> rows = driver.findElements(By.xpath("/html/body/div/table/tbody/tr"));
+			
+		List<WebElement> cols = driver.findElements(By.xpath("/html/body/div/table/thead/tr/th"));
+		
+		float lowestCost=0;
+		int row_num=0;
+		
+		for (int i=1; i<=rows.size(); ++i) {
+			if (i==1) {
+				lowestCost=Float.parseFloat(driver.findElement(By.xpath("/html/body/div/table/tbody/tr[" + i + "]/td[" + cols.size() + "]")).getText().replace("$", ""));
+				row_num=i;
+				}
+			else {
+				if (lowestCost > Float.parseFloat(driver.findElement(By.xpath("/html/body/div/table/tbody/tr[" + i + "]/td[" + cols.size() + "]")).getText().replace("$", ""))) {
+					
+					lowestCost=Float.parseFloat(driver.findElement(By.xpath("/html/body/div/table/tbody/tr[" + i + "]/td[" + cols.size() + "]")).getText().replace("$", ""));
+					row_num=i;
+					}		
+				}
+			}
+		
+		//System.out.println(lowestCost + " " + row_num);
+		//Thread.sleep(1000);
+		
+		WebElement chooseFlight = driver.findElement(By.xpath("/html/body/div/table/tbody/tr["+ row_num +"]/td[1]"));
+		chooseFlight.click();
+		Thread.sleep(5000);
+*/		
+		
+		
+		
+		
+		driver.get("http://e.ggtimer.com/");
+		driver.manage().window().maximize();
+		Thread.sleep(1000);
+		
+		int timeinSecs=5;
+		// Enter time
+		WebElement txtPlaceholder = driver.findElement(By.xpath("//*[@id=\"EggTimer-start-time-input-text\"]"));
+		txtPlaceholder.sendKeys(String.valueOf(timeinSecs));
+		
+		// Click Start
+		WebElement btnStart = driver.findElement(By.xpath("//*[@data-for=\"startpage\"]"));
+		btnStart.click();
+		
+		int lasttime=timeinSecs;
+		int counter=0;
+		System.out.println("Timer" + "   " + "Decrement by(secs)");
+		System.out.println("===========================================================");
+		for (int i=timeinSecs;i>=0;i--) {
+			counter = Integer.parseInt(driver.findElement(By.xpath("//*[@class=\"ClassicTimer-time\"]/span")).getText().replace(" seconds", "").replace(" second", ""));
+			System.out.println(driver.findElement(By.xpath("//*[@class=\"ClassicTimer-time\"]/span")).getText() + "   " + (lasttime-counter));
+			lasttime=counter;
+			Thread.sleep(1000);
+		}
+		Thread.sleep(2000);
+		driver.switchTo().alert().accept();
+	}
+
+	
+	@AfterMethod
+	public void close() {
+		
+		driver.close();
+	}
+	
+
+}

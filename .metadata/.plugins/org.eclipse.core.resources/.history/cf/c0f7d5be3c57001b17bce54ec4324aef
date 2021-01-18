@@ -1,0 +1,20 @@
+package newPackage;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeMethod;
+
+public class BaseClass {
+	
+	public WebDriver driver;
+
+	@BeforeMethod
+	public void setup() throws InterruptedException {
+
+		driver = new ChromeDriver();
+		driver.get("http://blazedemo.com/");
+		Thread.sleep(3000);
+
+	}
+
+}

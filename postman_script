@@ -1,0 +1,14 @@
+tests["Status code is 200"] = responseCode.code === 200;
+
+tests["Body matches string"] = responseBody.has("ship");
+
+tests["Response time is less than 400ms"] = responseTime < 200;
+
+tests["Content-Type is present"] = postman.getResponseHeader("Content-Type");
+
+tests["Get Content"] = jsondata = JSON.parse(responseBody)
+tests["find flight number"] = jsondata.flight_number === 113;
+tests["find second reused ship"] = jsondata.fairings.ships[0] === "5ea6ed2e080df4000697c907";
+tests["find name"] = jsondata.name === "Turksat 5A";
+
+

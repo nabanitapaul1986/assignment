@@ -1,0 +1,14 @@
+package newPackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+public class WebElementClass extends BaseClass {
+	
+	public void dropBox(String path) throws InterruptedException {
+	WebElement drpSource = driver..findElement(By.xpath(path));
+	Select Source = new Select(drpSource);
+	Source.selectByVisibleText("San Diego");
+	} 
+}

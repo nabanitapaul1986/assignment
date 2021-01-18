@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-01-16T06:13:43 IST" name="Default suite" finished-at="2021-01-16T06:13:57 IST" duration-ms="14177">
+    <groups>
+    </groups>
+    <test started-at="2021-01-16T06:13:43 IST" name="Default test" finished-at="2021-01-16T06:13:57 IST" duration-ms="14177">
+      <class name="BlazeDemo.TestClass">
+        <test-method is-config="true" signature="Setup()[pri:0, instance:BlazeDemo.TestClass@1a04f701]" started-at="2021-01-16T06:13:35 IST" name="Setup" finished-at="2021-01-16T06:13:43 IST" duration-ms="7813" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method signature="blazedemotest()[pri:0, instance:BlazeDemo.TestClass@1a04f701]" started-at="2021-01-16T06:13:43 IST" name="blazedemotest" finished-at="2021-01-16T06:13:57 IST" duration-ms="14046" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- blazedemotest -->
+        <test-method is-config="true" signature="close()[pri:0, instance:BlazeDemo.TestClass@1a04f701]" started-at="2021-01-16T06:13:57 IST" name="close" finished-at="2021-01-16T06:13:57 IST" duration-ms="102" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- BlazeDemo.TestClass -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

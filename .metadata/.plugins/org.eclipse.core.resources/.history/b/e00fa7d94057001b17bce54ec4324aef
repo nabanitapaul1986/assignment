@@ -1,0 +1,10 @@
+package newPackage;
+
+import org.openqa.selenium.By;
+
+public class WebElementClass extends TestClass {
+
+	public void print() {
+		System.out.println(driver.findElement(By.xpath("//*[@name='toPort']")));
+	}
+}
